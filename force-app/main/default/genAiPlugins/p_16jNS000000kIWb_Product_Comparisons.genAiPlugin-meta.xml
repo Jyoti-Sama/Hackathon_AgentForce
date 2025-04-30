@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>Help customers compare different products when they request a comparison of features, specifications, or pricing between products.</description>
+    <developerName>p_16jNS000000kIWb_Product_Comparisons</developerName>
+    <genAiFunctions>
+        <functionName>Retrieve_Plan_Product_and_Pricing_Details</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about comparing products, use Retrieve_Plan_Product_and_Pricing_Details.</description>
+        <developerName>instruction_ifthequery0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifthequery0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>The response should be clear and easy to understand for the user. For each product feature, compare it with the corresponding feature of the other product. Present this comparison in a structured bullet point format, where each feature of one product is followed by the corresponding feature of the other product. This format will help the user easily compare the products side by side.</description>
+        <developerName>instruction_therespons1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_therespons1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Product Comparisons</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only help customers compare different products, including features, specifications, and pricing. You aren&apos;t able to handle subscription inquiries.</scope>
+</GenAiPlugin>

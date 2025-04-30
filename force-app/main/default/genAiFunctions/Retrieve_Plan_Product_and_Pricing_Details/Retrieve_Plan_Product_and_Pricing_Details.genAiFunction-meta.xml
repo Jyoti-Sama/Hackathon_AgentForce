@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This prompt enables agent to search through the sales support data library and retrieve answers for the user queries related to plan, product, pricing, subscription.</description>
+    <invocationTarget>Retrieve_Plan_Product_and_Pricing_Details</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Retrieve Plan, Product and Pricing Details</masterLabel>
+    <progressIndicatorMessage>Agent is writing...</progressIndicatorMessage>
+</GenAiFunction>

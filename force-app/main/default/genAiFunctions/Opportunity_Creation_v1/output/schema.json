@@ -1,0 +1,33 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "ErrorMessages" : {
+      "title" : "ErrorMessages",
+      "description" : "If error messages is not empty, then agent will politely inform the customer that we couldn't complete the order, one of our agents will reach out to soon.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "OpportunityId" : {
+      "title" : "OpportunityId",
+      "description" : "newly created opportunity id from flow",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "PaymentLink" : {
+      "title" : "PaymentLink",
+      "description" : "Once the opoprtunity is created, flow will output payment link. Inform customer to click this link and make the payment so that his subscription will be activated immediately and he will receive a slack invite on his inbox. Connect in slack to receive further instructions.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

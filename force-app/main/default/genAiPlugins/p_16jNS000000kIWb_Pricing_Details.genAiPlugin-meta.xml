@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>Offer comprehensive pricing information for products when customers ask about the cost or pricing structure of products or subscription plan.</description>
+    <developerName>p_16jNS000000kIWb_Pricing_Details</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Retrieve_Plan_Product_and_Pricing_Details</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about pricing details, use Retrieve_Plan_Product_and_Pricing_Details.</description>
+        <developerName>instruction_ifthequery0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifthequery0</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Pricing Details</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only provide comprehensive pricing information for products. You aren&apos;t able to handle product features or subscription inquiries.</scope>
+</GenAiPlugin>

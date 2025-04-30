@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MktDataConnection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <connectionMethod>Ingress</connectionMethod>
+    <connectionStatus>ACTIVE</connectionStatus>
+    <connectorName>GoogleSheet</connectorName>
+    <credentials>
+        <fullName>Usage_Sheet_V2_namedCredential</fullName>
+        <credentialName>namedCredential</credentialName>
+        <value>*</value>
+    </credentials>
+    <externalRecordIdentifier>e875cd1d-6bd0-4735-82df-7c2aa50ca1b3</externalRecordIdentifier>
+    <masterLabel>Usage Sheet V2</masterLabel>
+</MktDataConnection>

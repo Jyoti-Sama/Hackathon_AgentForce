@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Assist the user in completing a product purchase or subscription by creating an opportunity. The agent should execute the action only if the following details are provided:
+Company Name
+Email
+First Name
+Last Name
+Subscription Plan (e.g., Beginner, Enterprise, Essentials, Advanced, Professional)
+Products (list of products the user wants to purchase, example: VX, Drawmax, Endurance)
+Product Quantity (GB required for each product)</description>
+    <developerName>Subscription_Completion</developerName>
+    <genAiFunctions>
+        <functionName>Retrieve_Plan_Product_and_Pricing_Details</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Opportunity_Creation_v1</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Ask user to share Company Name, Email, First Name and Last Name</description>
+        <developerName>instruction_askusertos0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_askusertos0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Show user a list of subscription plans and ask him to select one. Once user replies or select a subscription, store the subscription name. Ensure that the user selects a plan by its exact name (e.g., Beginner, Enterprise, Essentials, Advanced, or Professional), not a variation like &quot;essential plan&quot; or &quot;enterprise plan.&quot;</description>
+        <developerName>instruction_showuseral1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_showuseral1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Show user a list of products available for the subscription plan he selected with unit price and ask him to select the products that he needs. Once user selects the desired products store the product codes. Product codes are in the data library or you can just remove the spaces in the product name so it will become product code.</description>
+        <developerName>instruction_showuseral2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_showuseral2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once the user selects the products, ask how much GB they require for each product. Only accept numerical values and ensure the quantities are in the same order as the product list. The agent should then send the product codes and quantities as comma-separated values to the flow for opportunity creation. Example:
+
+If the user selects:
+Products: VX100, VX425
+Quantities: 1000GB, 750GB
+Then the product string should be: VX100,VX425
+The quantity string should be: 1000,750</description>
+        <developerName>instruction_oncetheuse3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_oncetheuse3</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Subscription Completion</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>The agent&apos;s role is to create an opportunity for the user only when they request help with a purchase or subscription.
+
+Validate Subscription Plan and Products: Before proceeding, the agent must ensure that the user understands the available subscription plans and products. Use the &quot;Retrieve_Plan_Product_and_Pricing_Details&quot; action to display the correct subscription plans and corresponding products.
+
+Subscription Plan Validation: The agent should verify that the subscription plan selected by the user is valid. Ensure that the user selects a plan by its exact name (e.g., Beginner, Enterprise, Essentials, Advanced, or Professional), not a variation like &quot;essential plan&quot; or &quot;enterprise plan.&quot;
+
+Product Validation: The agent should display the available products for the selected subscription plan with unitprice for that subscription plan. After the user selects the desired products, fetch the product codes (product names without spaces) using the &quot;Retrieve_Plan_Product_and_Pricing_Details&quot; action.
+
+Quantity Verification: Once the user selects the products, ask how much GB they require for each product. Only accept numerical values and ensure the quantities are in the same order as the product list. The agent should then send the product codes and quantities as comma-separated values to the flow for opportunity creation. Example:
+
+If the user selects:
+Products: VX100, VX425
+Quantities: 1000GB, 750GB
+Then the product string should be: VX100,VX425
+The quantity string should be: 1000,750
+
+Opportunity Creation: After validating all the details (Company Name, Email, First Name, Last Name, Subscription Plan, Products, and Quantities), the agent will pass this information to the opportunity creation action to create the opportunity with the correct subscription plan, products, and quantities.</scope>
+</GenAiPlugin>

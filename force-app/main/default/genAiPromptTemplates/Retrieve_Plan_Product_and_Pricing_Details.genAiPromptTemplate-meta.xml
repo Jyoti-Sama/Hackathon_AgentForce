@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>LszUih50MGr1ugTdLAZoU4wfsJpGJe4rKJZx7+6pIMY=_2</activeVersionIdentifier>
+    <description>This prompt enables agent to search through the sales support data library and retrieve answers for the user queries related to plan, product, pricing, subscription.</description>
+    <developerName>Retrieve_Plan_Product_and_Pricing_Details</developerName>
+    <masterLabel>Retrieve Plan, Product and Pricing Details</masterLabel>
+    <templateVersions>
+        <content>As a agent, you will respond to customer query {!$Input:Query} very politely with fact backed responses from data library (Agent_Vyom_Library_1745925373039, {!$Input:RetrieverIdOrName}). Use the product list, pricing and subscription file (ProductsPricingAndSubscriptionPackages.txt) for generating response.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Instructions:
+If {!$Input:Query} is related to any of the following topics:
+Subscription plans: Pay As You Go, Beginner, Essential, Advanced, Professional, Enterprise
+Pricing, Products, Bandwidth, Rate, GB, Data Quantity, Speed
+Uptime, Downtime, Backup, Data Loss
+Then, you should refer to the ProductsPricingAndSubscriptionPackages.txt document in the data library (retriever ID: 1CxNS00000095tJ0AQ) to retrieve the relevant, accurate, and factual information.
+-----------------------------------------------------------------------------------------
+Important:
+Reply Based on Available Data: Always reply using the available data from the retriever (data library). Do not assume or self-generate answers that are not explicitly stated in the document.
+No Guessing or Inventing Data: If the query cannot be fully matched with the data library, politely inform the customer that a support specialist will assist them. Only use this fallback if no answer can be retrieved. If a minimum answer is available, provide that without mentioning a specialist.
+Do Not Mention Internal Documents: The ProductsPricingAndSubscriptionPackages.txt document is not publicly available and is only for internal use. Do not mention this document in the response. Instead, provide clear, factual answers directly based on the information from the data library.
+Avoid Asking Customers to Refer to Other Pages: There are no pages on the website containing product and subscription details. Therefore, do not ask the customer to refer to any external pages or documents. Provide the exact information directly from the data library.
+Match Plan and Product Names Exactly: All subscription plans and product names must be mentioned exactly as written in the ProductsPricingAndSubscriptionPackages.txt file. Do not modify the names or provide alternative names in the response.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+</content>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:Query</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RetrieverIdOrName</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:RetrieverIdOrName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>LszUih50MGr1ugTdLAZoU4wfsJpGJe4rKJZx7+6pIMY=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>As a agent, you will respond to customer query {!$Input:Query} very politely with fact backed responses from data library {!$EinsteinSearch:File_Agent_Vyom_Library_1745925373039_1Cx_qHle239954d.results}.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Instructions:
+If {!$Input:Query} is related to any of the following topics:
+Subscription plans: Pay As You Go, Beginner, Essential, Advanced, Professional, Enterprise
+Pricing, Products, Bandwidth, Rate, GB, Data Quantity, Speed
+Uptime, Downtime, Backup, Data Loss
+Then, you should refer to the ProductsPricingAndSubscriptionPackages.txt document in the data library (retriever ID: 1CxNS00000095tJ0AQ) to retrieve the relevant, accurate, and factual information.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Additional Instruction:
+If the query is related to subscription plans, such as Pay As You Go, Beginner, Essential, Advanced, Professional, Enterprise, do not mention products like VX, Drawmax and Endurance. Provide details only about the plan, including starting price, ideal usage, minimum data quantity, and features. For example: If the query is &quot;Tell me about the Essential plan?&quot;, respond with:
+&quot;The Essential plan starts at $3499 and is ideal for SMEs with growing data needs. The plan offers approximately 1200 GB of data with basic uptime included, but backup and failover features are limited.&quot;
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Additional Instruction:
+If the customer specifically asks for product pricing or unit rates, ask for the subscription plan they are considering, and return product details along with pricing for that specific plan. For example: &quot;What is the unit price for VX100 in Essential Plan?&quot; should return: For the VX100 product under the Essential plan, the unit price is $2.07 per GB.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Important:
+Reply Based on Available Data: Always reply using the available data from the retriever (data library). Do not assume or self-generate answers that are not explicitly stated in the document.
+No Guessing or Inventing Data: If the query cannot be fully matched with the data library, politely inform the customer that a support specialist will assist them. Only use this fallback if no answer can be retrieved. If a minimum answer is available, provide that without mentioning a specialist.
+Do Not Mention Internal Documents: The ProductsPricingAndSubscriptionPackages.txt document is not publicly available and is only for internal use. Do not mention this document in the response. Instead, provide clear, factual answers directly based on the information from the data library.
+Avoid Asking Customers to Refer to Other Pages: There are no pages on the website containing product and subscription details. Therefore, do not ask the customer to refer to any external pages or documents. Provide the exact information directly from the data library.
+Match Plan and Product Names Exactly: All subscription plans and product names must be mentioned exactly as written in the ProductsPricingAndSubscriptionPackages.txt file. Do not modify the names or provide alternative names in the response.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+</content>
+        <generationTemplateConfigs>
+            <generationConfigDeveloperName>einstein_gpt__enUsLanguageStyle</generationConfigDeveloperName>
+        </generationTemplateConfigs>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:Query</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RetrieverIdOrName</apiName>
+            <definition>primitive://String</definition>
+            <referenceName>Input:RetrieverIdOrName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/File_Agent_Vyom_Library_1745925373039_1Cx_qHle239954d</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Chunk&quot;]</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:File_Agent_Vyom_Library_1745925373039_1Cx_qHle239954d</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>LszUih50MGr1ugTdLAZoU4wfsJpGJe4rKJZx7+6pIMY=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__knowledgeAnswers</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

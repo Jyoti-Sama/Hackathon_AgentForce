@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalExperienceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ESW_Simplway_New_1745931604404</label>
+    <site>
+        <urlPathPrefix>ESWSimplwayNew1745931604404</urlPathPrefix>
+    </site>
+    <space>site/ESW_Simplway_New_17459316044041</space>
+</DigitalExperienceConfig>

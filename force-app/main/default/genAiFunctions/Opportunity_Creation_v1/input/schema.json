@@ -1,0 +1,56 @@
+{
+  "required" : [ "AccountName", "Email", "FirstName", "LastName", "OpportunityProducts_Text", "PriceBookName", "Quantity" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "AccountName" : {
+      "title" : "AccountName",
+      "description" : "Ask customer to share the Company Name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Email" : {
+      "title" : "Email",
+      "description" : "Ask customer to share the email address",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "FirstName" : {
+      "title" : "FirstName",
+      "description" : "Ask customer to share the first name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "LastName" : {
+      "title" : "LastName",
+      "description" : "Ask customer to share the last name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "OpportunityProducts_Text" : {
+      "title" : "OpportunityProducts_Text",
+      "description" : "From the user conversation, identify the products he is interested in or ask him which products he needs. Get the product code from data library for those products and pass it as a comma separated string to flow.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "PriceBookName" : {
+      "title" : "PriceBookName",
+      "description" : "Understand the subscription plan customer needs and pass the exact name to flow. Example: If customer asks to continue with Essential Plan or Essential Subscription, then the price book name is Essential. These are the active pricebooks we have in Salesforce: Beginner, Enterprise, Essentials, Advanced, Professional",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Quantity" : {
+      "title" : "Quantity",
+      "description" : "Ask the customer what is his minimum required quantity in GB for each products and convert it to a comma separated string and sent it flow. Product name string and quantity string should be in exact order. Example: If customer says, VX 100 1000GB, VX 400 750GB then product string will be like \"VX100,VX400\" and quantity string will be like \"1000,750\"",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

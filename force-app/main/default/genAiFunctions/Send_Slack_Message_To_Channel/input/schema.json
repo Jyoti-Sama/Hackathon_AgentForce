@@ -1,0 +1,28 @@
+{
+  "required" : [ "channel_id", "text", "workspace_id" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "channel_id" : {
+      "title" : "channel_id",
+      "description" : "ID of the channel to send to",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "text" : {
+      "title" : "text",
+      "description" : "Message text to send",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "workspace_id" : {
+      "title" : "workspace_id",
+      "description" : "ID of the workspace to send to",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,35 @@
+{
+  "required" : [ "AccountName", "Email", "FirstName", "LastName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "AccountName" : {
+      "title" : "AccountName",
+      "description" : "Ask customer to share the Company Name. We need company name to create an account before creating the opportunity.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Email" : {
+      "title" : "Email",
+      "description" : "Ask customer to share his email address. We need email to create a contact and we will share the slack invite to this email.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "FirstName" : {
+      "title" : "FirstName",
+      "description" : "Customer's first name is required to create contact and to address him in the future communications.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "LastName" : {
+      "title" : "LastName",
+      "description" : "Customer's last name is a required field on contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

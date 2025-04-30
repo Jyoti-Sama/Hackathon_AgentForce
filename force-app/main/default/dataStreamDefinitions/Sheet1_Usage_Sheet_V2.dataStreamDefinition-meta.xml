@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataStreamDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <areHeadersIncludedInFile>false</areHeadersIncludedInFile>
+    <bulkIngest>true</bulkIngest>
+    <creationType>Custom</creationType>
+    <dataConnector>Usage_Sheet_V2</dataConnector>
+    <dataConnectorType>GoogleSheet</dataConnectorType>
+    <dataPlatformDataSetItemName>CONNECTORSFRAMEWORK</dataPlatformDataSetItemName>
+    <dataSource>GoogleSheet_Usage_Sheet_V2</dataSource>
+    <isLimitedToNewFiles>false</isLimitedToNewFiles>
+    <isMissingFileFailure>false</isMissingFileFailure>
+    <masterLabel>Sheet1 Usage Sheet V2</masterLabel>
+    <mktDataLakeObject>Sheet1_Usage_Sheet_V2__dll</mktDataLakeObject>
+    <mktDataTranObject>Sheet1_Usage_Sheet_V2</mktDataTranObject>
+    <parameters>
+        <fullName>Sheet1_Usage_Sheet_V2_fileType</fullName>
+        <paramName>fileType</paramName>
+        <value>spreadsheet</value>
+    </parameters>
+    <parameters>
+        <fullName>Sheet1_Usage_Sheet_V2_fileUrl</fullName>
+        <paramName>fileUrl</paramName>
+        <value>https://docs.google.com/spreadsheets/d/1ne-SAxZzKdwrGwOyRetCcV1YG-AUZQL8LPbRNWcaXV8/edit?usp=sharing</value>
+    </parameters>
+</DataStreamDefinition>

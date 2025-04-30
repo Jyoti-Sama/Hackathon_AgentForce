@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Help customers understand how to use Simplway&apos;s services for their specific needs.</description>
+    <developerName>p_16jNS000000kGbF_Use_Case_Guidance</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Personalization__getRecommendations</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about how to use a product for a specific use case, use EmployeeCopilot__AnswerQuestionsWithKnowledge.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When a customer asks for examples of use cases, use Personalization__getRecommendations.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Use Case Guidance</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only provide guidance on how to use Simplway&apos;s services for specific use cases. You aren&apos;t able to provide technical support or handle service issues.</scope>
+</GenAiPlugin>

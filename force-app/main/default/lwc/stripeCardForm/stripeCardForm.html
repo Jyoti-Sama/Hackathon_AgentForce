@@ -1,0 +1,72 @@
+<!-- stripeCardForm.html -->
+<template>
+  <div class="card-demo">
+    <!-- bind to the dataFacing getter, NOT an inline expression -->
+    <div class="card-container" data-facing={dataFacing}>
+      <div class="card">
+        <div class="front">
+          <div class="chip"></div>
+          <div class="number">{formattedCardNumber}</div>
+          <div class="info">
+            <span class="name">{cardName}</span>
+            <span class="expiry">{expiry}</span>
+          </div>
+        </div>
+        <div class="back">
+          <div class="magstripe"></div>
+          <div class="signature-block">
+            <div class="signature">{cardName}</div>
+            <div class="cvv">{cvvMasked}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- rest of your inputs/buttons unchanged -->
+  <div class="form-fields">
+    <lightning-input
+      label="Card Number"
+      value={cardNumber}
+      onchange={handleNumberChange}
+      placeholder="1234 5678 9012 3456"
+      maxlength="19"
+      data-id="number">
+    </lightning-input>
+
+    <lightning-input
+      label="Name on Card"
+      value={cardName}
+      onchange={handleChange}
+      data-id="name">
+    </lightning-input>
+
+    <div class="expiry-cvv">
+      <lightning-input
+        label="Expiry (MM/YY)"
+        value={expiry}
+        onchange={handleChange}
+        placeholder="MM/YY"
+        maxlength="5"
+        data-id="expiry">
+      </lightning-input>
+      <lightning-input
+        label="CVC"
+        type="password"
+        value={cvv}
+        onchange={handleChange}
+        data-id="cvv"
+        onfocus={showBack}
+        onblur={showFront}>
+      </lightning-input>
+    </div>
+
+    <div class="submit-btn">
+      <lightning-button
+        variant="brand"
+        label="Submit Payment"
+        onclick={handleSubmit}>
+      </lightning-button>
+    </div>
+  </div>
+</template>

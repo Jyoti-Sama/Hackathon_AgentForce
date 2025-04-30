@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Product Specialist Agent</label>
+    <protected>false</protected>
+    <values>
+        <field>Slack_Bot_Token__c</field>
+        <value xsi:type="xsd:string">xoxb-8806407253447-8823756347266-rFEE3zPzyttV6sdtuWd0CqIh</value>
+    </values>
+    <values>
+        <field>Slack_Team_ID__c</field>
+        <value xsi:type="xsd:string">E08PQBZ7FD5</value>
+    </values>
+    <values>
+        <field>Slack_User_Token__c</field>
+        <value xsi:type="xsd:string">xoxp-8806407253447-8806407255799-8823756254818-2259815267eaddcf9426ddf91daf83e8</value>
+    </values>
+</CustomMetadata>

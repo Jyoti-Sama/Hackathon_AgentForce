@@ -1,0 +1,36 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "FoundNoDetails" : {
+      "title" : "FoundNoDetails",
+      "description" : "If this has any value then politely inform the customer that we couldn't complete the subscription due to some technical issue. However, we have notified an SDR to reach out to you ASAP.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "OpportunityId" : {
+      "title" : "OpportunityId",
+      "description" : "If this has any value then politely inform the customer that we are completing the subscription. Please check your inbox whether he has received a slack invitation and payment completion link.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "OpportunityInst" : {
+      "title" : "OpportunityInst",
+      "description" : "Ignore this",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Opportunity"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

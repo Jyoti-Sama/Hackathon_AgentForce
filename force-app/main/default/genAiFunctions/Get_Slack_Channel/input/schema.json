@@ -1,0 +1,21 @@
+{
+  "required" : [ "channel_name", "workspace_name" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "channel_name" : {
+      "title" : "channel_name",
+      "description" : "Name of the channel to search for",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "workspace_name" : {
+      "title" : "workspace_name",
+      "description" : "Name of the Slack workspace",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

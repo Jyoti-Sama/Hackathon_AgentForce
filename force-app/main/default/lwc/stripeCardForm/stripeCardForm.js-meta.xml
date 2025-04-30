@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Stripe-Style Card Form</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="cardNumber" type="String" label="Card Number" />
+            <property name="cardName" type="String" label="Name on Card" />
+            <property name="expiry" type="String" label="Expiry (MM/YY)" />
+            <property name="cvv" type="String" label="CVC" />
+            <property name="isSubmitted" type="Boolean" label="Form Submitted" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

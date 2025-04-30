@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send a slack message to appropriate users when prompted.</description>
+    <invocationTarget>SendSlackMessageAction</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Send Slack Message To Channel</masterLabel>
+    <progressIndicatorMessage>Loading</progressIndicatorMessage>
+</GenAiFunction>
